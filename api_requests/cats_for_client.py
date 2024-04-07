@@ -4,10 +4,8 @@ from operator import itemgetter
 
 from main import (BASE_URL, ALL_BREEDS_URL, VOTES_URL, headers, dog_params, kids_params)
 
-client = 'dog'
 
-
-def get_sub_id():
+def get_sub_id(client):
     sub_id = client + '_parent'
     return sub_id
 
@@ -39,7 +37,7 @@ def get_cats_for_client(for_whom):
     return correct_list
 
 
-def get_cat_names_for_client():
+def get_cat_names_for_client(client):
     response = get_cats_for_client(client)
     names_list = []
     for cat in response:
@@ -47,7 +45,7 @@ def get_cat_names_for_client():
     return names_list
 
 
-def get_cat_ids_for_client():
+def get_cat_ids_for_client(client):
     response = get_cats_for_client(client)
     ids_list = []
     for cat in response:
@@ -61,8 +59,8 @@ def extract_links(url):
     return link
 
 
-def images_and_ids():
-    response = get_cat_ids_for_client()
+def images_and_ids(client):
+    response = get_cat_ids_for_client(client)
     cats_images = []
     cats_ids = []
     for cat in response:
@@ -85,8 +83,8 @@ def vote_picture(image_id, sub_id):
     return response.json()
 
 
-def vote_image(sub_id):
-    cats_ids, cats_images = images_and_ids()
+def vote_image(sub_id, client):
+    cats_ids, cats_images = images_and_ids(client)
     image_id_list = []
     vt_value_list = []
     for image_id in cats_ids:
@@ -102,8 +100,8 @@ def get_votes_by_subid(sub_id):
     return response
 
 
-def filter_cats():
-    response = get_votes_by_subid(get_sub_id())
+def filter_cats(client):
+    response = get_votes_by_subid(get_sub_id(client))
     best_cats = []
     for cat in response.json():
         value = cat['value']
