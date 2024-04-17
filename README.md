@@ -22,8 +22,14 @@ The code follows the following steps:
 - searches for images with those specific breeds and displays the `image_id` and the `link`;
 - uses the `image_id` to vote the picture;
 - filter the best votes made by the user and displays the images with the best cats.
-The final result shows the picture url and it's rating:  
+The final result shows the picture url and it's rating:
+
 ![Screenshot 2024-04-07 at 21 05 59](https://github.com/robi12issv/CatApi_Project/assets/160391019/958765a0-5e46-45a7-943d-ef3a5e1c6d3b)
 
 To change the type of the client (dog owners or kids), in `test_cats_for_client` change `client` variable from `dog` to `kids`
+
 ![Screenshot 2024-04-07 at 21 20 50](https://github.com/robi12issv/CatApi_Project/assets/160391019/0693e9a7-e215-4e20-a619-60b544a9b11f)
+
+The tests run successfully and the coverage report showed a 97% coverage. 
+
+![Screenshot 2024-04-17 at 19 40 44](https://github.com/robi12issv/CatApi/assets/160391019/1c187473-747e-4be5-9f7b-17254d7d70a5)
