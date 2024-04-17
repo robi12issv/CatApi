@@ -15,9 +15,13 @@ Aditionally, the project has the `main` file with the variables.
 For cloning the project, open your preferred IDE and in the terminal, enter the command `git clone` followed by the project link, like this: 
 `git clone https://github.com/robi12issv/CatApi_Project.git`
 
-The `test_api` file contains tests for the basic requests such as getting images, filtering by breed and voting an image.
-The `test_cats_for_client` file contains tests that allow the user to extract, filter and return the cats that are most suitable for dog owners and children.
-The filtering is done by breed and the user can rate the pictures in order to get the ones that are perfect for their needs. 
+The `test_api` file contains tests for the basic requests such as getting images, filtering by breed and voting an image.  
+The `test_cats_for_client` file contains tests that allow the user to extract, filter and return the cats that are most suitable for dog owners and children. The important aspect of these tests is that they are made for people that have dogs or kids and require a parameter that specifies whom the search is made for.  
+The code follows the following steps: 
+- filters the cat breeds based on atributes that increase the compatibility between cat and dogs or kids and displays the name of the breed and the value of the atributes;
+- searches for images with those specific breeds and displays the `image_id` and the `link`;
+- uses the `image_id` to vote the picture;
+- filter the best votes made by the user and displays the images with the best cats.
 The final result shows the picture url and it's rating:  
 ![Screenshot 2024-04-07 at 21 05 59](https://github.com/robi12issv/CatApi_Project/assets/160391019/958765a0-5e46-45a7-943d-ef3a5e1c6d3b)
 
